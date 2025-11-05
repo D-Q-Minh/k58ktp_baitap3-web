@@ -48,3 +48,7 @@ LẬP TRÌNH ỨNG DỤNG WEB trên nền linux
  - Cấu hình nginx để http://fullname.com/grafana truy cập vào grafana qua cổng 80, (dù grafana đang chạy ở port 3000)
 
 #### Bài làm:
+##### 
+1. Cài đặt môi trường:
+Docker Desktop:
+<img width="1366" height="591" alt="1" src="https://github.com/user-attachments/assets/bfd81dd6-2094-4891-8f6d-71560ac84dcb" />
