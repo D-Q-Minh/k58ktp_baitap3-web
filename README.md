@@ -62,7 +62,7 @@ wsl:
 3. cài đặt các docker container:
 mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)
 sử dụng file docker-compose.yml:
-\`\`\`yaml
+```yaml
 #version: "3.8"
 
 services:
@@ -109,5 +109,5 @@ services:
       - TZ=Asia/Ho_Chi_Minh
     volumes:
       - "d:/k58ktp/nodered:/data"
-\`\`\`
+```
 <img width="396" height="75" alt="3" src="https://github.com/user-attachments/assets/9c9830e0-d0ef-4740-b9c5-0a36b55ed8d0" />
