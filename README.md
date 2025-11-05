@@ -57,7 +57,8 @@ wsl:
 <img width="345" height="25" alt="2" src="https://github.com/user-attachments/assets/78f9c40a-5c70-438b-bc8a-4010a5cb3781" />
 <img width="386" height="56" alt="2 1" src="https://github.com/user-attachments/assets/32623988-6fb4-4ddc-90d5-f4055b5f7cbd" />
 <img width="1075" height="584" alt="2 2" src="https://github.com/user-attachments/assets/9d53ee37-2961-4373-b4eb-926883da5505" />
-2. Docker có sẵn trên docker desktop
+2. Docker
+có sẵn trên docker desktop
 
 3. cài đặt các docker container:
 mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)
