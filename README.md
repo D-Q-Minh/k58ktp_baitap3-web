@@ -62,5 +62,52 @@ wsl:
 3. cài đặt các docker container:
 mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)
 sử dụng file docker-compose.yml:
+\`\`\`yaml
+#version: "3.8"
 
+services:
+  mariadb:
+    image: ghcr.io/linuxserver/mariadb:latest
+    container_name: mariadb
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Ho_Chi_Minh
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=mydb
+      - MYSQL_USER=myuser
+      - MYSQL_PASSWORD=mypass
+    ports:
+      - "3306:3306"
+    volumes:
+      - d:\k58ktp\mariadb\data:/config
+
+  phpmyadmin:
+    image: ghcr.io/linuxserver/phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Ho_Chi_Minh
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mariadb
+      - PMA_USER=myuser
+      - PMA_PASSWORD=mypass
+    ports:
+      - "8081:80"
+    depends_on:
+      - mariadb
+  nodered:
+    image: mirror.gcr.io/nodered/node-red:latest
+    container_name: nodered
+    restart: always
+    ports:
+      - "1880:1880"
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+    volumes:
+      - "d:/k58ktp/nodered:/data"
+\`\`\`
 <img width="396" height="75" alt="3" src="https://github.com/user-attachments/assets/9c9830e0-d0ef-4740-b9c5-0a36b55ed8d0" />
