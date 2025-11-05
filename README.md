@@ -112,3 +112,5 @@ services:
       - "d:/k58ktp/nodered:/data"
 ```
 <img width="396" height="75" alt="3" src="https://github.com/user-attachments/assets/9c9830e0-d0ef-4740-b9c5-0a36b55ed8d0" />
+
+4. Tạo file nginx.conf
