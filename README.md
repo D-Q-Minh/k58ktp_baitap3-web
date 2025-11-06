@@ -66,6 +66,6 @@ sử dụng file docker-compose.yml
 ```yml
 
 ```
-<img width="587" height="281" alt="3" src="https://github.com/user-attachments/assets/81430acf-e20e-49d0-a23b-9c019e37709d" />
+<img width="587" height="281" alt="3" src="https://github.com/user-attachments/assets/5ab2ad3e-29c3-4893-93bd-3cc5e5f3ff9b" />
 
 4. Cấu hình file nginx.conf
