@@ -116,8 +116,11 @@ server {
 }
 ```
 http://duongquangminh.com:8443 → Web chính
+
 http://duongquangminh.com:8443/nodered/ → Node-RED
+
 http://duongquangminh.com:8443/grafana/ → Grafana
+
 http://localhost:8080 → phpMyAdmin
 
 5. Frontend, backend
