@@ -69,3 +69,55 @@ sử dụng file docker-compose.yml
 <img width="587" height="281" alt="3" src="https://github.com/user-attachments/assets/5ab2ad3e-29c3-4893-93bd-3cc5e5f3ff9b" />
 
 4. Cấu hình file nginx.conf
+```yml
+server {
+    listen 80;
+    server_name duongquangminh.com;
+
+    root /usr/share/nginx/html;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Proxy API → Node-RED
+    location /api/ {
+        proxy_pass http://node-red:1880/api/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Proxy Node-RED UI
+    location /nodered/ {
+        proxy_pass http://node-red:1880/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+
+    # Proxy Grafana
+    location /grafana/ {
+        proxy_pass http://grafana:3000/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+}
+```
+http://duongquangminh.com:8443 → Web chính
+http://duongquangminh.com:8443/nodered/ → Node-RED
+http://duongquangminh.com:8443/grafana/ → Grafana
+http://localhost:8080 → phpMyAdmin
+
+5. Frontend, backend
