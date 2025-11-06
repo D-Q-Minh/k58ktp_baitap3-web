@@ -62,7 +62,7 @@ có sẵn trên docker desktop
 
 3. cài đặt các docker container:
 mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)
-sử dụng file docker-compose.yml:
+sử dụng file docker-compose.yml
 ```yml
 
 ```
